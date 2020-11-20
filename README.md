@@ -88,3 +88,7 @@ Deploy mysql
 Deploy wordpress
 
     oc apply -f wordpress-deployment.yml
+
+Fix the permissions so wordpress can run on openshift
+
+    oc adm policy add-scc-to-user anyuid -z default

@@ -21,7 +21,7 @@ metadata:
   name: wordpress
 spec:
   port:
-    targetPort: web
+    targetPort: 80
   to:
     kind: Service
     name: wordpress

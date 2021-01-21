@@ -79,16 +79,12 @@ deploy wordpress with mysql backend
 
 Create a secret that contains the contents of the mysql-pass file. Feel free to change the passoword.
 
-    oc create secret generic mysql-pass --from-file=./password
+    kubectl create secret generic mysql-pass --from-file=./password
 
 Deploy mysql
 
-    oc apply -f mysql-deployment.yml
+    kubectl apply -f mysql-deployment.yml
 
 Deploy wordpress
 
-    oc apply -f wordpress-deployment.yml
-
-Fix the permissions so wordpress can run on openshift
-
-    oc adm policy add-scc-to-user anyuid -z default
+    kubectl apply -f wordpress-deployment.yml
